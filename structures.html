@@ -1,0 +1,232 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>C Language - Structures</title>
+</head>
+<body>
+
+<h1>C Language Programs - Structures</h1>
+
+<p>
+    <a href="#program1">1. Employee Details in Tabular Form</a><br>
+    <a href="#program2">2. Print Only Employee Names</a><br>
+    <a href="#program3">3. Employee Name Characters with Employee ID</a><br>
+    <a href="#program4">4. Student Details in Ascending Roll Number</a>
+</p>
+
+<hr>
+
+<h2 id="program1">1. Employee Details in Tabular Form</h2>
+<p>Enter details of 50 employees and print them in tabular form.</p>
+
+<pre>
+#include &lt;stdio.h&gt;
+
+struct employee
+{
+    int id;
+    char name[50];
+    char designation[50];
+};
+
+int main()
+{
+    struct employee e[50];
+    int i;
+
+    for(i = 0; i &lt; 50; i++)
+    {
+        printf("\nEnter details of employee %d\n", i + 1);
+
+        printf("Employee ID: ");
+        scanf("%d", &amp;e[i].id);
+
+        printf("Name: ");
+        scanf(" %49[^\n]", e[i].name);
+
+        printf("Designation: ");
+        scanf(" %49[^\n]", e[i].designation);
+    }
+
+    printf("\n%-10s %-25s %-25s\n",
+           "ID", "Name", "Designation");
+
+    for(i = 0; i &lt; 50; i++)
+    {
+        printf("%-10d %-25s %-25s\n",
+               e[i].id, e[i].name, e[i].designation);
+    }
+
+    return 0;
+}
+</pre>
+
+<hr>
+
+<h2 id="program2">2. Print Only Employee Names</h2>
+<p>Enter details of 50 employees and display only their names.</p>
+
+<pre>
+#include &lt;stdio.h&gt;
+
+struct employee
+{
+    int id;
+    char name[50];
+    char designation[50];
+};
+
+int main()
+{
+    struct employee e[50];
+    int i;
+
+    for(i = 0; i &lt; 50; i++)
+    {
+        printf("\nEmployee %d\n", i + 1);
+
+        printf("Employee ID: ");
+        scanf("%d", &amp;e[i].id);
+
+        printf("Name: ");
+        scanf(" %49[^\n]", e[i].name);
+
+        printf("Designation: ");
+        scanf(" %49[^\n]", e[i].designation);
+    }
+
+    printf("\nNames of Employees:\n");
+
+    for(i = 0; i &lt; 50; i++)
+    {
+        printf("%s\n", e[i].name);
+    }
+
+    return 0;
+}
+</pre>
+
+<hr>
+
+<h2 id="program3">3. Employee Name Characters with Employee ID</h2>
+<p>Display each character of an employee's name alongside their employee ID.</p>
+
+<pre>
+#include &lt;stdio.h&gt;
+
+struct employee
+{
+    int id;
+    char name[50];
+    char designation[50];
+};
+
+int main()
+{
+    struct employee e[50];
+    int i, j;
+
+    for(i = 0; i &lt; 50; i++)
+    {
+        printf("\nEmployee %d\n", i + 1);
+
+        printf("Employee ID: ");
+        scanf("%d", &amp;e[i].id);
+
+        printf("Name: ");
+        scanf(" %49[^\n]", e[i].name);
+
+        printf("Designation: ");
+        scanf(" %49[^\n]", e[i].designation);
+    }
+
+    printf("\n%-15s %s\n", "Employee ID", "Name Character");
+
+    for(i = 0; i &lt; 50; i++)
+    {
+        for(j = 0; e[i].name[j] != '\0'; j++)
+        {
+            printf("%-15d %c\n", e[i].id, e[i].name[j]);
+        }
+    }
+
+    return 0;
+}
+</pre>
+
+<hr>
+
+<h2 id="program4">4. Student Details in Ascending Roll Number</h2>
+<p>Enter roll number, name, fee and date of birth of students, then sort by roll number.</p>
+
+<pre>
+#include &lt;stdio.h&gt;
+
+struct student
+{
+    int roll;
+    char name[50];
+    float fee;
+    char dob[20];
+};
+
+int main()
+{
+    struct student s[5], temp;
+    int i, j;
+
+    for(i = 0; i &lt; 5; i++)
+    {
+        printf("\nEnter details of student %d\n", i + 1);
+
+        printf("Roll number: ");
+        scanf("%d", &amp;s[i].roll);
+
+        printf("Name: ");
+        scanf(" %49[^\n]", s[i].name);
+
+        printf("Fee: ");
+        scanf("%f", &amp;s[i].fee);
+
+        printf("Date of birth (DD/MM/YYYY): ");
+        scanf("%19s", s[i].dob);
+    }
+
+    for(i = 0; i &lt; 4; i++)
+    {
+        for(j = 0; j &lt; 4 - i; j++)
+        {
+            if(s[j].roll &gt; s[j + 1].roll)
+            {
+                temp = s[j];
+                s[j] = s[j + 1];
+                s[j + 1] = temp;
+            }
+        }
+    }
+
+    printf("\n%-10s %-20s %-12s %-15s\n",
+           "Roll No.", "Name", "Fee", "Date of Birth");
+
+    for(i = 0; i &lt; 5; i++)
+    {
+        printf("%-10d %-20s %-12.2f %-15s\n",
+               s[i].roll, s[i].name, s[i].fee, s[i].dob);
+    }
+
+    return 0;
+}
+</pre>
+
+<hr>
+
+<p><a href="website.html">Back to Home</a></p>
+
+<hr>
+
+<p>Project created by Nishant</p>
+<p>BCA - First Year</p>
+
+</body>
+</html>

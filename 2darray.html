@@ -1,0 +1,256 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Array Programs in C</title>
+</head>
+<body>
+
+    <h1>2D Array Programs in C</h1>
+    <p>Here are some basic C programs based on two-dimensional arrays and matrices.</p>
+
+    <h2>List of Programs</h2>
+    <ol>
+        <li><a href="#p1">Enter four numbers and print them in matrix form</a></li>
+        <li><a href="#p2">Enter a matrix and print its transpose</a></li>
+        <li><a href="#p3">Enter two matrices and add them</a></li>
+        <li><a href="#p4">Enter two matrices and subtract them</a></li>
+        <li><a href="#p5">Enter two matrices and multiply them</a></li>
+    </ol>
+
+    <hr>
+
+    <h2 id="p1">1. Enter four numbers and print them in matrix form</h2>
+    <pre><code>#include &lt;stdio.h&gt;
+
+int main()
+{
+    int a[2][2], i, j;
+
+    printf("Enter four numbers:\n");
+
+    for(i = 0; i &lt; 2; i++)
+    {
+        for(j = 0; j &lt; 2; j++)
+        {
+            scanf("%d", &amp;a[i][j]);
+        }
+    }
+
+    printf("Matrix is:\n");
+
+    for(i = 0; i &lt; 2; i++)
+    {
+        for(j = 0; j &lt; 2; j++)
+        {
+            printf("%d ", a[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}</code></pre>
+
+    <hr>
+
+    <h2 id="p2">2. Enter a matrix and print its transpose</h2>
+    <pre><code>#include &lt;stdio.h&gt;
+
+int main()
+{
+    int a[2][2], i, j;
+
+    printf("Enter four numbers:\n");
+
+    for(i = 0; i &lt; 2; i++)
+    {
+        for(j = 0; j &lt; 2; j++)
+        {
+            scanf("%d", &amp;a[i][j]);
+        }
+    }
+
+    printf("Transpose of matrix:\n");
+
+    for(i = 0; i &lt; 2; i++)
+    {
+        for(j = 0; j &lt; 2; j++)
+        {
+            printf("%d ", a[j][i]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}</code></pre>
+
+    <hr>
+
+    <h2 id="p3">3. Enter two matrices and add them</h2>
+    <pre><code>#include &lt;stdio.h&gt;
+
+int main()
+{
+    int a[2][2], b[2][2], c[2][2];
+    int i, j;
+
+    printf("Enter first matrix:\n");
+
+    for(i = 0; i &lt; 2; i++)
+    {
+        for(j = 0; j &lt; 2; j++)
+        {
+            scanf("%d", &amp;a[i][j]);
+        }
+    }
+
+    printf("Enter second matrix:\n");
+
+    for(i = 0; i &lt; 2; i++)
+    {
+        for(j = 0; j &lt; 2; j++)
+        {
+            scanf("%d", &amp;b[i][j]);
+        }
+    }
+
+    for(i = 0; i &lt; 2; i++)
+    {
+        for(j = 0; j &lt; 2; j++)
+        {
+            c[i][j] = a[i][j] + b[i][j];
+        }
+    }
+
+    printf("Sum of matrices:\n");
+
+    for(i = 0; i &lt; 2; i++)
+    {
+        for(j = 0; j &lt; 2; j++)
+        {
+            printf("%d ", c[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}</code></pre>
+
+    <hr>
+
+    <h2 id="p4">4. Enter two matrices and subtract them</h2>
+    <pre><code>#include &lt;stdio.h&gt;
+
+int main()
+{
+    int a[2][2], b[2][2], c[2][2];
+    int i, j;
+
+    printf("Enter first matrix:\n");
+
+    for(i = 0; i &lt; 2; i++)
+    {
+        for(j = 0; j &lt; 2; j++)
+        {
+            scanf("%d", &amp;a[i][j]);
+        }
+    }
+
+    printf("Enter second matrix:\n");
+
+    for(i = 0; i &lt; 2; i++)
+    {
+        for(j = 0; j &lt; 2; j++)
+        {
+            scanf("%d", &amp;b[i][j]);
+        }
+    }
+
+    for(i = 0; i &lt; 2; i++)
+    {
+        for(j = 0; j &lt; 2; j++)
+        {
+            c[i][j] = a[i][j] - b[i][j];
+        }
+    }
+
+    printf("Subtraction of matrices:\n");
+
+    for(i = 0; i &lt; 2; i++)
+    {
+        for(j = 0; j &lt; 2; j++)
+        {
+            printf("%d ", c[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}</code></pre>
+
+    <hr>
+
+    <h2 id="p5">5. Enter two matrices and multiply them</h2>
+    <pre><code>#include &lt;stdio.h&gt;
+
+int main()
+{
+    int a[2][2], b[2][2], c[2][2];
+    int i, j, k;
+
+    printf("Enter first matrix:\n");
+
+    for(i = 0; i &lt; 2; i++)
+    {
+        for(j = 0; j &lt; 2; j++)
+        {
+            scanf("%d", &amp;a[i][j]);
+        }
+    }
+
+    printf("Enter second matrix:\n");
+
+    for(i = 0; i &lt; 2; i++)
+    {
+        for(j = 0; j &lt; 2; j++)
+        {
+            scanf("%d", &amp;b[i][j]);
+        }
+    }
+
+    for(i = 0; i &lt; 2; i++)
+    {
+        for(j = 0; j &lt; 2; j++)
+        {
+            c[i][j] = 0;
+
+            for(k = 0; k &lt; 2; k++)
+            {
+                c[i][j] = c[i][j] + a[i][k] * b[k][j];
+            }
+        }
+    }
+
+    printf("Multiplication of matrices:\n");
+
+    for(i = 0; i &lt; 2; i++)
+    {
+        for(j = 0; j &lt; 2; j++)
+        {
+            printf("%d ", c[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}</code></pre>
+
+    <hr>
+
+    <p><a href="website.html">Back to Home</a></p>
+
+    <p>Project created by Nishant</p>
+    <p>BCA - First Year</p>
+
+</body>
+</html>

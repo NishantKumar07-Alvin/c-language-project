@@ -1,0 +1,256 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Operators Programs</title>
+</head>
+<body>
+
+    <h1>Operators Programs</h1>
+
+    <p>This page contains C programs related to operators.</p>
+
+    <h2>Program List</h2>
+
+    <ol>
+        <li><a href="#p1">Example of Pre-Increment</a></li>
+        <li><a href="#p2">Example of Post-Increment</a></li>
+        <li><a href="#p3">Example of Pre-Decrement</a></li>
+        <li><a href="#p4">Example of Post-Decrement</a></li>
+        <li><a href="#p5">Arithmetic Operations</a></li>
+        <li><a href="#p6">Print the Last Digit of a Number</a></li>
+        <li><a href="#p7">Print the Decimal Part of a Number</a></li>
+        <li><a href="#p8">Find the Cube of a Number</a></li>
+        <li><a href="#p9">Round Off a Decimal Number</a></li>
+        <li><a href="#p10">Convert Lowercase to Uppercase</a></li>
+        <li><a href="#p11">Calculate Average Marks</a></li>
+        <li><a href="#p12">Calculate Simple Interest</a></li>
+    </ol>
+
+    <p><a href="../index.html">Back to Home</a></p>
+
+    <hr>
+
+    <h2 id="p1">Program 01 - Example of Pre-Increment</h2>
+    <pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int a = 5;
+    printf("%d", ++a);
+    return 0;
+}
+    </pre>
+    <p>Output: 6</p>
+    <a href="#">Back to Top</a>
+
+    <hr>
+
+    <h2 id="p2">Program 02 - Example of Post-Increment</h2>
+    <pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int a = 5;
+    printf("%d", a++);
+    return 0;
+}
+    </pre>
+    <p>Output: 5</p>
+    <a href="#">Back to Top</a>
+
+    <hr>
+
+    <h2 id="p3">Program 03 - Example of Pre-Decrement</h2>
+    <pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int a = 5;
+    printf("%d", --a);
+    return 0;
+}
+    </pre>
+    <p>Output: 4</p>
+    <a href="#">Back to Top</a>
+
+    <hr>
+
+    <h2 id="p4">Program 04 - Example of Post-Decrement</h2>
+    <pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int a = 5;
+    printf("%d", a--);
+    return 0;
+}
+    </pre>
+    <p>Output: 5</p>
+    <a href="#">Back to Top</a>
+
+    <hr>
+
+    <h2 id="p5">Program 05 - Arithmetic Operations</h2>
+    <pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int a = 10, b = 3;
+
+    printf("Addition = %d\n", a + b);
+    printf("Subtraction = %d\n", a - b);
+    printf("Multiplication = %d\n", a * b);
+    printf("Division = %d\n", a / b);
+    printf("Remainder = %d\n", a % b);
+
+    return 0;
+}
+    </pre>
+    <p>Output:</p>
+    <pre>
+Addition = 13
+Subtraction = 7
+Multiplication = 30
+Division = 3
+Remainder = 1
+    </pre>
+    <a href="#">Back to Top</a>
+
+    <hr>
+
+    <h2 id="p6">Program 06 - Print the Last Digit of a Number</h2>
+    <pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int n = 1234;
+    printf("Last digit = %d", n % 10);
+    return 0;
+}
+    </pre>
+    <p>Output: Last digit = 4</p>
+    <a href="#">Back to Top</a>
+
+    <hr>
+
+    <h2 id="p7">Program 07 - Print the Decimal Part of a Number</h2>
+    <pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    float n = 12.75;
+    int whole = (int)n;
+
+    printf("Decimal part = %.2f", n - whole);
+
+    return 0;
+}
+    </pre>
+    <p>Output: Decimal part = 0.75</p>
+    <a href="#">Back to Top</a>
+
+    <hr>
+
+    <h2 id="p8">Program 08 - Find the Cube of a Number</h2>
+    <pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int n = 3;
+    printf("Cube = %d", n * n * n);
+    return 0;
+}
+    </pre>
+    <p>Output: Cube = 27</p>
+    <a href="#">Back to Top</a>
+
+    <hr>
+
+    <h2 id="p9">Program 09 - Round Off a Decimal Number</h2>
+    <pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    float n = 5.7;
+    int result = (int)(n + 0.5);
+
+    printf("Rounded number = %d", result);
+
+    return 0;
+}
+    </pre>
+    <p>Output: Rounded number = 6</p>
+    <a href="#">Back to Top</a>
+
+    <hr>
+
+    <h2 id="p10">Program 10 - Convert Lowercase to Uppercase</h2>
+    <pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    char ch = 'a';
+
+    printf("Uppercase = %c", ch - 32);
+
+    return 0;
+}
+    </pre>
+    <p>Output: Uppercase = A</p>
+    <a href="#">Back to Top</a>
+
+    <hr>
+
+    <h2 id="p11">Program 11 - Calculate Average Marks</h2>
+    <pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    float a = 70, b = 80, c = 90;
+    float average = (a + b + c) / 3;
+
+    printf("Average = %.2f", average);
+
+    return 0;
+}
+    </pre>
+    <p>Output: Average = 80.00</p>
+    <a href="#">Back to Top</a>
+
+    <hr>
+
+    <h2 id="p12">Program 12 - Calculate Simple Interest</h2>
+    <pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    float p = 1000, r = 5, t = 2;
+    float si = (p * r * t) / 100;
+
+    printf("Simple Interest = %.2f", si);
+
+    return 0;
+}
+    </pre>
+    <p>Output: Simple Interest = 100.00</p>
+    <a href="#">Back to Top</a>
+
+    <hr>
+
+    <a href="../index.html">Back to Home</a>
+
+</body>
+</html>

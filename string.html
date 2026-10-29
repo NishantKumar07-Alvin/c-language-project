@@ -1,0 +1,647 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>String Programs in C</title>
+</head>
+<body>
+
+    <h1>String Programs in C</h1>
+    <p>Here are some basic C programs based on strings.</p>
+
+    <h2>List of Programs</h2>
+    <ol>
+        <li><a href="#p1">Convert string into uppercase</a></li>
+        <li><a href="#p2">Convert string into lowercase</a></li>
+        <li><a href="#p3">Convert string into sentence case</a></li>
+        <li><a href="#p4">Convert string into title case</a></li>
+        <li><a href="#p5">Convert string into toggle case</a></li>
+        <li><a href="#p6">Find length of string</a></li>
+        <li><a href="#p7">Compare two strings</a></li>
+        <li><a href="#p8">Concatenate two strings</a></li>
+        <li><a href="#p9">Copy string into another string</a></li>
+        <li><a href="#p10">Print character at a given index</a></li>
+        <li><a href="#p11">Print each character on a new line</a></li>
+        <li><a href="#p12">Copy string in reverse order</a></li>
+        <li><a href="#p13">Find the difference between characters of two strings</a></li>
+        <li><a href="#p14">Check whether a character exists in string</a></li>
+        <li><a href="#p15">Find the index of a character in string</a></li>
+        <li><a href="#p16">Count all vowels in string</a></li>
+        <li><a href="#p17">Print character at a given index</a></li>
+        <li><a href="#p18">Check string palindrome using reverse</a></li>
+        <li><a href="#p19">Store student details and marks</a></li>
+    </ol>
+
+    <hr>
+
+    <h2 id="p1">1. Enter a string and convert it into uppercase</h2>
+    <pre><code>
+
+#include <stdio.h>
+
+int main()
+{
+    char str[100];
+    int i;
+
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);
+
+    for(i = 0; str[i] != '\0'; i++)
+    {
+        if(str[i] >= 'a' && str[i] <= 'z')
+        {
+            str[i] = str[i] - 32;
+        }
+    }
+
+    printf("Uppercase string: %s", str);
+
+    return 0;
+}
+
+}</code></pre>
+
+    <hr>
+
+    <h2 id="p2">2. Enter a string and convert it into lowercase</h2>
+    <pre><code>
+#
+#include <stdio.h>
+
+int main()
+{
+    char str[100];
+    int i;
+
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);
+
+    for(i = 0; str[i] != '\0'; i++)
+    {
+        if(str[i] >= 'A' && str[i] <= 'Z')
+        {
+            str[i] = str[i] + 32;
+        }
+    }
+
+    printf("Lowercase string: %s", str);
+
+    return 0;
+}
+
+}</code></pre>
+
+    <hr>
+
+    <h2 id="p3">3. Enter a string and convert it into sentence case</h2>
+    <pre><code>#include &lt;stdio.h&gt;
+#include &lt;ctype.h&gt;
+
+int main()
+{
+    char str[100];
+    int i;
+
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);
+
+    for(i = 0; str[i] != '\0'; i++)
+    {
+        str[i] = tolower((unsigned char)str[i]);
+    }
+
+    if(str[0] != '\0')
+    {
+        str[0] = toupper((unsigned char)str[0]);
+    }
+
+    printf("Sentence case: %s", str);
+
+    return 0;
+}</code></pre>
+
+    <hr>
+
+    <h2 id="p4">4. Enter a string and convert it into title case</h2>
+    <pre><code>#include &lt;stdio.h&gt;
+#include &lt;ctype.h&gt;
+
+int main()
+{
+    char str[100];
+    int i;
+
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);
+
+    for(i = 0; str[i] != '\0'; i++)
+    {
+        if(i == 0 || str[i - 1] == ' ')
+        {
+            str[i] = toupper((unsigned char)str[i]);
+        }
+        else
+        {
+            str[i] = tolower((unsigned char)str[i]);
+        }
+    }
+
+    printf("Title case: %s", str);
+
+    return 0;
+}</code></pre>
+
+    <hr>
+
+    <h2 id="p5">5. Enter a string and convert it into toggle case</h2>
+    <pre><code>#include &lt;stdio.h&gt;
+#include &lt;ctype.h&gt;
+
+int main()
+{
+    char str[100];
+    int i;
+
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);
+
+    for(i = 0; str[i] != '\0'; i++)
+    {
+        if(islower((unsigned char)str[i]))
+        {
+            str[i] = toupper((unsigned char)str[i]);
+        }
+        else if(isupper((unsigned char)str[i]))
+        {
+            str[i] = tolower((unsigned char)str[i]);
+        }
+    }
+
+    printf("Toggle case: %s", str);
+
+    return 0;
+}</code></pre>
+
+    <hr>
+
+    <h2 id="p6">6. Enter a string and find its length</h2>
+    <pre><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int main()
+{
+    char str[100];
+    int length;
+
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);
+
+    str[strcspn(str, "\n")] = '\0';
+
+    length = strlen(str);
+
+    printf("Length of string = %d", length);
+
+    return 0;
+}</code></pre>
+
+    <hr>
+
+    <h2 id="p7">7. Enter two strings and compare them</h2>
+    <pre><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int main()
+{
+    char str1[100], str2[100];
+
+    printf("Enter first string: ");
+    fgets(str1, sizeof(str1), stdin);
+
+    printf("Enter second string: ");
+    fgets(str2, sizeof(str2), stdin);
+
+    str1[strcspn(str1, "\n")] = '\0';
+    str2[strcspn(str2, "\n")] = '\0';
+
+    if(strcmp(str1, str2) == 0)
+    {
+        printf("Strings are equal");
+    }
+    else
+    {
+        printf("Strings are not equal");
+    }
+
+    return 0;
+}</code></pre>
+
+    <hr>
+
+    <h2 id="p8">8. Enter two strings and concatenate them</h2>
+    <pre><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int main()
+{
+    char str1[200], str2[100];
+
+    printf("Enter first string: ");
+    fgets(str1, sizeof(str1), stdin);
+
+    printf("Enter second string: ");
+    fgets(str2, sizeof(str2), stdin);
+
+    str1[strcspn(str1, "\n")] = '\0';
+    str2[strcspn(str2, "\n")] = '\0';
+
+    strcat(str1, str2);
+
+    printf("Concatenated string: %s", str1);
+
+    return 0;
+}</code></pre>
+
+    <hr>
+
+    <h2 id="p9">9. Enter a string and copy it into another string</h2>
+    <pre><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int main()
+{
+    char str1[100], str2[100];
+
+    printf("Enter a string: ");
+    fgets(str1, sizeof(str1), stdin);
+
+    str1[strcspn(str1, "\n")] = '\0';
+
+    strcpy(str2, str1);
+
+    printf("Copied string: %s", str2);
+
+    return 0;
+}</code></pre>
+
+    <hr>
+
+    <h2 id="p10">10. Enter a string and print the character at a given index</h2>
+    <pre><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int main()
+{
+    char str[100];
+    int n, length;
+
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);
+
+    str[strcspn(str, "\n")] = '\0';
+    length = strlen(str);
+
+    printf("Enter index number: ");
+    scanf("%d", &amp;n);
+
+    if(n &gt;= 0 &amp;&amp; n &lt; length)
+    {
+        printf("Character = %c", str[n]);
+    }
+    else
+    {
+        printf("Out of bound");
+    }
+
+    return 0;
+}</code></pre>
+
+    <hr>
+
+    <h2 id="p11">11. Enter a string and print each character on a new line</h2>
+    <pre><code>#include &lt;stdio.h&gt;
+
+int main()
+{
+    char str[100];
+    int i;
+
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);
+
+    for(i = 0; str[i] != '\0'; i++)
+    {
+        if(str[i] != '\n')
+        {
+            printf("%c\n", str[i]);
+        }
+    }
+
+    return 0;
+}</code></pre>
+
+    <hr>
+
+    <h2 id="p12">12. Enter a string and copy it in reverse order</h2>
+    <pre><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int main()
+{
+    char str1[100], str2[100];
+    int i, j, length;
+
+    printf("Enter a string: ");
+    fgets(str1, sizeof(str1), stdin);
+
+    str1[strcspn(str1, "\n")] = '\0';
+    length = strlen(str1);
+
+    for(i = length - 1, j = 0; i &gt;= 0; i--, j++)
+    {
+        str2[j] = str1[i];
+    }
+
+    str2[j] = '\0';
+
+    printf("Reversed string: %s", str2);
+
+    return 0;
+}</code></pre>
+
+    <hr>
+
+    <h2 id="p13">13. Enter two strings and find the difference between each character</h2>
+    <pre><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int main()
+{
+    char str1[100], str2[100];
+    int i, length;
+
+    printf("Enter first string: ");
+    fgets(str1, sizeof(str1), stdin);
+
+    printf("Enter second string: ");
+    fgets(str2, sizeof(str2), stdin);
+
+    str1[strcspn(str1, "\n")] = '\0';
+    str2[strcspn(str2, "\n")] = '\0';
+
+    length = strlen(str1);
+
+    if(strlen(str1) != strlen(str2))
+    {
+        printf("Strings must have equal length");
+    }
+    else
+    {
+        for(i = 0; i &lt; length; i++)
+        {
+            printf("Difference at position %d = %d\n",
+                   i, str1[i] - str2[i]);
+        }
+    }
+
+    return 0;
+}</code></pre>
+
+    <hr>
+
+    <h2 id="p14">14. Enter a string and check whether a character exists</h2>
+    <pre><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int main()
+{
+    char str[100], ch;
+    int i, found = 0;
+
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);
+
+    str[strcspn(str, "\n")] = '\0';
+
+    printf("Enter a character: ");
+    scanf(" %c", &amp;ch);
+
+    for(i = 0; str[i] != '\0'; i++)
+    {
+        if(str[i] == ch)
+        {
+            found = 1;
+            break;
+        }
+    }
+
+    if(found == 1)
+    {
+        printf("Character exists");
+    }
+    else
+    {
+        printf("Character does not exist");
+    }
+
+    return 0;
+}</code></pre>
+
+    <hr>
+
+    <h2 id="p15">15. Enter a string and print the index of a character</h2>
+    <pre><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int main()
+{
+    char str[100], ch;
+    int i, found = 0;
+
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);
+
+    str[strcspn(str, "\n")] = '\0';
+
+    printf("Enter a character: ");
+    scanf(" %c", &amp;ch);
+
+    for(i = 0; str[i] != '\0'; i++)
+    {
+        if(str[i] == ch)
+        {
+            printf("Index number = %d", i);
+            found = 1;
+            break;
+        }
+    }
+
+    if(found == 0)
+    {
+        printf("Character not found");
+    }
+
+    return 0;
+}</code></pre>
+
+    <hr>
+
+    <h2 id="p16">16. Enter a string and count all vowels</h2>
+    <pre><code>#include &lt;stdio.h&gt;
+#include &lt;ctype.h&gt;
+
+int main()
+{
+    char str[100];
+    int i, count = 0;
+
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);
+
+    for(i = 0; str[i] != '\0'; i++)
+    {
+        char ch = tolower((unsigned char)str[i]);
+
+        if(ch == 'a' || ch == 'e' || ch == 'i' ||
+           ch == 'o' || ch == 'u')
+        {
+            count++;
+        }
+    }
+
+    printf("Total vowels = %d", count);
+
+    return 0;
+}</code></pre>
+
+    <hr>
+
+    <h2 id="p17">17. Enter a string and print the character at a given index</h2>
+    <pre><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int main()
+{
+    char str[100];
+    int n, length;
+
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);
+
+    str[strcspn(str, "\n")] = '\0';
+    length = strlen(str);
+
+    printf("Enter index number: ");
+    scanf("%d", &amp;n);
+
+    if(n &gt;= 0 &amp;&amp; n &lt; length)
+    {
+        printf("Character at index %d = %c", n, str[n]);
+    }
+    else
+    {
+        printf("Out of bound");
+    }
+
+    return 0;
+}</code></pre>
+
+    <hr>
+
+    <h2 id="p18">18. String palindrome example using reverse</h2>
+    <pre><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int main()
+{
+    char str[100], rev[100];
+    int i, j, length;
+
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);
+
+    str[strcspn(str, "\n")] = '\0';
+    length = strlen(str);
+
+    for(i = length - 1, j = 0; i &gt;= 0; i--, j++)
+    {
+        rev[j] = str[i];
+    }
+
+    rev[j] = '\0';
+
+    printf("Reverse string: %s\n", rev);
+
+    if(strcmp(str, rev) == 0)
+    {
+        printf("String is palindrome");
+    }
+    else
+    {
+        printf("String is not palindrome");
+    }
+
+    return 0;
+}</code></pre>
+
+    <hr>
+
+    <h2 id="p19">19. Enter roll number, name, class and marks of 5 subjects</h2>
+    <pre><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+struct Student
+{
+    int roll;
+    char name[50];
+    char className[20];
+    float marks[5];
+};
+
+int main()
+{
+    struct Student s;
+    int i;
+
+    printf("Enter roll number: ");
+    scanf("%d", &amp;s.roll);
+    getchar();
+
+    printf("Enter name: ");
+    fgets(s.name, sizeof(s.name), stdin);
+    s.name[strcspn(s.name, "\n")] = '\0';
+
+    printf("Enter class: ");
+    fgets(s.className, sizeof(s.className), stdin);
+    s.className[strcspn(s.className, "\n")] = '\0';
+
+    printf("Enter marks of 5 subjects:\n");
+
+    for(i = 0; i &lt; 5; i++)
+    {
+        scanf("%f", &amp;s.marks[i]);
+    }
+
+    printf("\nStudent Details\n");
+    printf("Roll Number: %d\n", s.roll);
+    printf("Name: %s\n", s.name);
+    printf("Class: %s\n", s.className);
+
+    for(i = 0; i &lt; 5; i++)
+    {
+        printf("Subject %d Marks: %.2f\n", i + 1, s.marks[i]);
+    }
+
+    return 0;
+}</code></pre>
+
+    <hr>
+
+    <p><a href="website.html">Back to Home</a></p>
+
+    <p>Project created by Nishant</p>
+    <p>BCA - First Year</p>
+
+</body>
+</html>

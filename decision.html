@@ -1,0 +1,655 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Decision Control Programs</title>
+</head>
+<body>
+
+<h1>Decision Control Structure Programs</h1>
+
+<p>This page contains C programs based on decision-making statements.</p>
+
+<h2>Program List</h2>
+
+<ol>
+<li><a href="#p1">Check Positive, Negative or Zero</a></li>
+<li><a href="#p2">Check Odd or Even</a></li>
+<li><a href="#p3">Count the Digits of a Number</a></li>
+<li><a href="#p4">Display Grade According to Marks</a></li>
+<li><a href="#p5">Check Whether a Number Is Decimal</a></li>
+<li><a href="#p6">Change the Sign of Number</a></li>
+<li><a href="#p7">Check Whether a Character Is an Alphabet</a></li>
+<li><a href="#p8">Perform an Operation Based on Sign</a></li>
+<li><a href="#p9">Check Positive or Negative Number</a></li>
+<li><a href="#p10">Find the Greater of Two Numbers</a></li>
+<li><a href="#p11">Check Divisibility by 4</a></li>
+<li><a href="#p12">Check Whether Four Characters Are Equal</a></li>
+<li><a href="#p13">Find the Greatest of Three Numbers</a></li>
+<li><a href="#p14">Display Months Based on Number of Days</a></li>
+<li><a href="#p15">Print a One-Digit Number in Words</a></li>
+<li><a href="#p16">Compare Two Characters</a></li>
+<li><a href="#p17">Print a Two-Digit Number in Words</a></li>
+<li><a href="#p18">Identify Character Type</a></li>
+<li><a href="#p19">Check Leap Year</a></li>
+<li><a href="#p20">Check Whether a Date Is Valid</a></li>
+<li><a href="#p21">Calculate Age from Date of Birth</a></li>
+<li><a href="#p22">Calculate Rectangle Area and Perimeter</a></li>
+</ol>
+
+<hr>
+
+<h2 id="p1">Program 01 - Check Positive, Negative or Zero</h2>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int n;
+    printf("Enter a number: ");
+    scanf("%d", &amp;n);
+
+    if (n &gt; 0)
+        printf("Positive");
+    else if (n &lt; 0)
+        printf("Negative");
+    else
+        printf("Zero");
+
+    return 0;
+}
+</pre>
+<a href="#">Back to Top</a>
+
+<hr>
+
+<h2 id="p2">Program 02 - Check Odd or Even</h2>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int n;
+    printf("Enter a number: ");
+    scanf("%d", &amp;n);
+
+    if (n % 2 == 0)
+        printf("Even");
+    else
+        printf("Odd");
+
+    return 0;
+}
+</pre>
+<a href="#">Back to Top</a>
+
+<hr>
+
+<h2 id="p3">Program 03 - Count the Digits of a Number</h2>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int n, count = 0;
+    printf("Enter a number: ");
+    scanf("%d", &amp;n);
+
+    if (n == 0)
+        count = 1;
+    else
+    {
+        if (n &lt; 0)
+            n = -n;
+
+        while (n &gt; 0)
+        {
+            count++;
+            n = n / 10;
+        }
+    }
+
+    printf("Digits = %d", count);
+    return 0;
+}
+</pre>
+<a href="#">Back to Top</a>
+
+<hr>
+
+<h2 id="p4">Program 04 - Display Grade According to Marks</h2>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int marks;
+    printf("Enter marks: ");
+    scanf("%d", &amp;marks);
+
+    if (marks &gt;= 90)
+        printf("Grade A");
+    else if (marks &gt;= 75)
+        printf("Grade B");
+    else if (marks &gt;= 60)
+        printf("Grade C");
+    else if (marks &gt;= 40)
+        printf("Grade D");
+    else
+        printf("Fail");
+
+    return 0;
+}
+</pre>
+<a href="#">Back to Top</a>
+
+<hr>
+
+<h2 id="p5">Program 05 - Check Whether a Number Is Decimal</h2>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    double n;
+    printf("Enter a number: ");
+    scanf("%lf", &amp;n);
+
+    if (n == (int)n)
+        printf("Whole number");
+    else
+        printf("Decimal number");
+
+    return 0;
+}
+</pre>
+<a href="#">Back to Top</a>
+
+<hr>
+
+<h2 id="p6">Program 06 - Change the Sign of Number</h2>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int n;
+    printf("Enter a number: ");
+    scanf("%d", &amp;n);
+
+    n = -n;
+
+    printf("Changed number = %d", n);
+    return 0;
+}
+</pre>
+<a href="#">Back to Top</a>
+
+<hr>
+
+<h2 id="p7">Program 07 - Check Whether a Character Is an Alphabet</h2>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    char ch;
+    printf("Enter a character: ");
+    scanf(" %c", &amp;ch);
+
+    if ((ch &gt;= 'A' &amp;&amp; ch &lt;= 'Z') ||
+        (ch &gt;= 'a' &amp;&amp; ch &lt;= 'z'))
+        printf("Alphabet");
+    else
+        printf("Not an alphabet");
+
+    return 0;
+}
+</pre>
+<a href="#">Back to Top</a>
+
+<hr>
+
+<h2 id="p8">Program 08 - Perform an Operation Based on Sign</h2>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int a, b;
+    char op;
+
+    printf("Enter two numbers: ");
+    scanf("%d %d", &amp;a, &amp;b);
+
+    printf("Enter operator (+, -, *, /): ");
+    scanf(" %c", &amp;op);
+
+    if (op == '+')
+        printf("%d", a + b);
+    else if (op == '-')
+        printf("%d", a - b);
+    else if (op == '*')
+        printf("%d", a * b);
+    else if (op == '/' &amp;&amp; b != 0)
+        printf("%d", a / b);
+    else
+        printf("Invalid operation");
+
+    return 0;
+}
+</pre>
+<a href="#">Back to Top</a>
+
+<hr>
+
+<h2 id="p9">Program 09 - Check Positive or Negative Number</h2>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int n;
+    printf("Enter a number: ");
+    scanf("%d", &amp;n);
+
+    if (n &gt;= 0)
+        printf("Positive or zero");
+    else
+        printf("Negative");
+
+    return 0;
+}
+</pre>
+<a href="#">Back to Top</a>
+
+<hr>
+
+<h2 id="p10">Program 10 - Find the Greater of Two Numbers</h2>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int a, b;
+    printf("Enter two numbers: ");
+    scanf("%d %d", &amp;a, &amp;b);
+
+    if (a &gt; b)
+        printf("%d is greater", a);
+    else if (b &gt; a)
+        printf("%d is greater", b);
+    else
+        printf("Both are equal");
+
+    return 0;
+}
+</pre>
+<a href="#">Back to Top</a>
+
+<hr>
+
+<h2 id="p11">Program 11 - Check Divisibility by 4</h2>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int n;
+    printf("Enter a number: ");
+    scanf("%d", &amp;n);
+
+    if (n % 4 == 0)
+        printf("Divisible by 4");
+    else
+        printf("Not divisible by 4");
+
+    return 0;
+}
+</pre>
+<a href="#">Back to Top</a>
+
+<hr>
+
+<h2 id="p12">Program 12 - Check Whether Four Characters Are Equal</h2>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    char a, b, c, d;
+
+    printf("Enter four characters: ");
+    scanf(" %c %c %c %c", &amp;a, &amp;b, &amp;c, &amp;d);
+
+    if (a == b &amp;&amp; b == c &amp;&amp; c == d)
+        printf("All characters are equal");
+    else
+        printf("Characters are not equal");
+
+    return 0;
+}
+</pre>
+<a href="#">Back to Top</a>
+
+<hr>
+
+<h2 id="p13">Program 13 - Find the Greatest of Three Numbers</h2>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int a, b, c;
+    printf("Enter three numbers: ");
+    scanf("%d %d %d", &amp;a, &amp;b, &amp;c);
+
+    if (a &gt;= b &amp;&amp; a &gt;= c)
+        printf("%d is greatest", a);
+    else if (b &gt;= a &amp;&amp; b &gt;= c)
+        printf("%d is greatest", b);
+    else
+        printf("%d is greatest", c);
+
+    return 0;
+}
+</pre>
+<a href="#">Back to Top</a>
+
+<hr>
+
+<h2 id="p14">Program 14 - Display Months Based on Number of Days</h2>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int days;
+    printf("Enter number of days: ");
+    scanf("%d", &amp;days);
+
+    if (days == 28 || days == 29)
+        printf("February");
+    else if (days == 30)
+        printf("April, June, September or November");
+    else if (days == 31)
+        printf("January, March, May, July, August, October or December");
+    else
+        printf("Invalid number of days");
+
+    return 0;
+}
+</pre>
+<a href="#">Back to Top</a>
+
+<hr>
+
+<h2 id="p15">Program 15 - Print a One-Digit Number in Words</h2>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int n;
+    printf("Enter a digit (0-9): ");
+    scanf("%d", &amp;n);
+
+    switch (n)
+    {
+        case 0: printf("Zero"); break;
+        case 1: printf("One"); break;
+        case 2: printf("Two"); break;
+        case 3: printf("Three"); break;
+        case 4: printf("Four"); break;
+        case 5: printf("Five"); break;
+        case 6: printf("Six"); break;
+        case 7: printf("Seven"); break;
+        case 8: printf("Eight"); break;
+        case 9: printf("Nine"); break;
+        default: printf("Invalid digit");
+    }
+
+    return 0;
+}
+</pre>
+<a href="#">Back to Top</a>
+
+<hr>
+
+<h2 id="p16">Program 16 - Compare Two Characters</h2>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    char a, b;
+    printf("Enter two characters: ");
+    scanf(" %c %c", &amp;a, &amp;b);
+
+    if (a == b)
+        printf("Characters are equal");
+    else
+        printf("Characters are different");
+
+    return 0;
+}
+</pre>
+<a href="#">Back to Top</a>
+
+<hr>
+
+<h2 id="p17">Program 17 - Print a Two-Digit Number in Words</h2>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int n;
+    printf("Enter a number (10-99): ");
+    scanf("%d", &amp;n);
+
+    if (n &lt; 10 || n &gt; 99)
+        printf("Invalid number");
+    else if (n &lt; 20)
+    {
+        switch (n)
+        {
+            case 10: printf("Ten"); break;
+            case 11: printf("Eleven"); break;
+            case 12: printf("Twelve"); break;
+            case 13: printf("Thirteen"); break;
+            case 14: printf("Fourteen"); break;
+            case 15: printf("Fifteen"); break;
+            case 16: printf("Sixteen"); break;
+            case 17: printf("Seventeen"); break;
+            case 18: printf("Eighteen"); break;
+            case 19: printf("Nineteen"); break;
+        }
+    }
+    else
+    {
+        int tens = n / 10;
+        int ones = n % 10;
+
+        switch (tens)
+        {
+            case 2: printf("Twenty"); break;
+            case 3: printf("Thirty"); break;
+            case 4: printf("Forty"); break;
+            case 5: printf("Fifty"); break;
+            case 6: printf("Sixty"); break;
+            case 7: printf("Seventy"); break;
+            case 8: printf("Eighty"); break;
+            case 9: printf("Ninety"); break;
+        }
+
+        switch (ones)
+        {
+            case 1: printf(" One"); break;
+            case 2: printf(" Two"); break;
+            case 3: printf(" Three"); break;
+            case 4: printf(" Four"); break;
+            case 5: printf(" Five"); break;
+            case 6: printf(" Six"); break;
+            case 7: printf(" Seven"); break;
+            case 8: printf(" Eight"); break;
+            case 9: printf(" Nine"); break;
+        }
+    }
+
+    return 0;
+}
+</pre>
+<a href="#">Back to Top</a>
+
+<hr>
+
+<h2 id="p18">Program 18 - Identify Character Type</h2>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    char ch;
+    printf("Enter a character: ");
+    scanf(" %c", &amp;ch);
+
+    if (ch &gt;= 'A' &amp;&amp; ch &lt;= 'Z')
+        printf("Uppercase alphabet");
+    else if (ch &gt;= 'a' &amp;&amp; ch &lt;= 'z')
+        printf("Lowercase alphabet");
+    else if (ch &gt;= '0' &amp;&amp; ch &lt;= '9')
+        printf("Digit");
+    else
+        printf("Special character");
+
+    return 0;
+}
+</pre>
+<a href="#">Back to Top</a>
+
+<hr>
+
+<h2 id="p19">Program 19 - Check Leap Year</h2>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int year;
+    printf("Enter year: ");
+    scanf("%d", &amp;year);
+
+    if ((year % 400 == 0) ||
+        (year % 4 == 0 &amp;&amp; year % 100 != 0))
+        printf("Leap year");
+    else
+        printf("Not a leap year");
+
+    return 0;
+}
+</pre>
+<a href="#">Back to Top</a>
+
+<hr>
+
+<h2 id="p20">Program 20 - Check Whether a Date Is Valid</h2>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int day, month, year, maxdays;
+
+    printf("Enter day, month and year: ");
+    scanf("%d %d %d", &amp;day, &amp;month, &amp;year);
+
+    if (month &lt; 1 || month &gt; 12 || year &lt; 1)
+    {
+        printf("Invalid date");
+        return 0;
+    }
+
+    if (month == 2)
+    {
+        if (year % 400 == 0 ||
+            (year % 4 == 0 &amp;&amp; year % 100 != 0))
+            maxdays = 29;
+        else
+            maxdays = 28;
+    }
+    else if (month == 4 || month == 6 ||
+             month == 9 || month == 11)
+        maxdays = 30;
+    else
+        maxdays = 31;
+
+    if (day &gt;= 1 &amp;&amp; day &lt;= maxdays)
+        printf("Valid date");
+    else
+        printf("Invalid date");
+
+    return 0;
+}
+</pre>
+<a href="#">Back to Top</a>
+
+<hr>
+
+<h2 id="p21">Program 21 - Calculate Age from Date of Birth</h2>
+<p>Enter the birth year and current year to calculate approximate age.</p>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int birthYear, currentYear;
+
+    printf("Enter birth year: ");
+    scanf("%d", &amp;birthYear);
+
+    printf("Enter current year: ");
+    scanf("%d", &amp;currentYear);
+
+    if (birthYear &gt; 0 &amp;&amp; currentYear &gt;= birthYear)
+        printf("Age = %d", currentYear - birthYear);
+    else
+        printf("Invalid year");
+
+    return 0;
+}
+</pre>
+<a href="#">Back to Top</a>
+
+<hr>
+
+<h2 id="p22">Program 22 - Calculate Rectangle Area and Perimeter</h2>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    float length, breadth;
+
+    printf("Enter length and breadth: ");
+    scanf("%f %f", &amp;length, &amp;breadth);
+
+    if (length &gt; 0 &amp;&amp; breadth &gt; 0)
+    {
+        printf("Area = %.2f\n", length * breadth);
+        printf("Perimeter = %.2f", 2 * (length + breadth));
+    }
+    else
+        printf("Invalid dimensions");
+
+    return 0;
+}
+</pre>
+<a href="#">Back to Top</a>
+
+<hr>
+
+<a href="../index.html">Back to Home</a>
+
+</body>
+</html>

@@ -1,0 +1,261 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Basic Output Programs</title>
+</head>
+<body>
+
+<h1>Basic Output Programs</h1>
+
+<p>This section contains basic C programs for beginners.</p>
+
+<h2>Program List</h2>
+
+<ol>
+    <a href="website.html">Back to Home</a>
+<li><a href="#p1">Print First C Program Message</a></li>
+<li><a href="#p2">Read a Character</a></li>
+<li><a href="#p3">Read 4 Characters and Display Each on a Separate Line</a></li>
+<li><a href="#p4">Print Your Name at the Center of the First Line</a></li>
+<li><a href="#p5">Print a Single Quote</a></li>
+<li><a href="#p6">Print Your Name 5 Times</a></li>
+<li><a href="#p7">Display C Program on Screen</a></li>
+<li><a href="#p8">Print Name at Center</a></li>
+<li><a href="#p9">Display Password as Stars</a></li>
+<li><a href="#p10">Print ASCII Values of Two Characters</a></li>
+<li><a href="#p11">Print ASCII Characters from 0 to 127</a></li>
+</ol>
+
+<hr>
+
+<h2 id="p1">Program 01 - Print First C Program Message</h2>
+<p>Write a C program to display a message on the screen.</p>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    printf("Welcome to C Programming");
+    return 0;
+}
+</pre>
+<p>Output:</p>
+<pre>
+Welcome to C Programming
+</pre>
+<a href="#">Back to Top</a>
+
+<hr>
+
+<h2 id="p2">Program 02 - Read a Character</h2>
+<p>Write a C program to read and display one character.</p>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    char ch;
+
+    printf("Enter a character: ");
+    scanf("%c", &amp;ch);
+
+    printf("Character = %c", ch);
+
+    return 0;
+}
+</pre>
+<a href="#">Back to Top</a>
+
+<hr>
+
+<h2 id="p3">Program 03 - Read 4 Characters and Display Each on a Separate Line</h2>
+<p>Write a C program to read four characters and print each on a new line.</p>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    char a, b, c, d;
+
+    printf("Enter four characters: ");
+    scanf(" %c %c %c %c", &amp;a, &amp;b, &amp;c, &amp;d);
+
+    printf("%c\n", a);
+    printf("%c\n", b);
+    printf("%c\n", c);
+    printf("%c\n", d);
+
+    return 0;
+}
+</pre>
+<a href="#">Back to Top</a>
+
+<hr>
+
+<h2 id="p4">Program 04 - Print Your Name at the Center of the First Line</h2>
+<p>Write a C program to print your name with spaces before it.</p>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    printf("          Nishant");
+    return 0;
+}
+</pre>
+<a href="#">Back to Top</a>
+
+<hr>
+
+<h2 id="p5">Program 05 - Print a Single Quote</h2>
+<p>Write a C program to display a single quote.</p>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    printf("\'");
+    return 0;
+}
+</pre>
+<p>Output:</p>
+<pre>
+'
+</pre>
+<a href="#">Back to Top</a>
+
+<hr>
+
+<h2 id="p6">Program 06 - Print Your Name 5 Times</h2>
+<p>Write a C program to print your name five times.</p>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    printf("Nishant\n");
+    printf("Nishant\n");
+    printf("Nishant\n");
+    printf("Nishant\n");
+    printf("Nishant\n");
+
+    return 0;
+}
+</pre>
+<a href="#">Back to Top</a>
+
+<hr>
+
+<h2 id="p7">Program 07 - Display C Program on Screen</h2>
+<p>Write a C program to display a sample C program as text.</p>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    printf("#include &lt;stdio.h&gt;\\n");
+    printf("int main()\\n");
+    printf("{\\n");
+    printf("    printf(\\"Hello World\\");\\n");
+    printf("    return 0;\\n");
+    printf("}\\n");
+
+    return 0;
+}
+</pre>
+<a href="#">Back to Top</a>
+
+<hr>
+
+<h2 id="p8">Program 08 - Print Name at Center</h2>
+<p>Write a C program to print your name with spaces before it.</p>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    printf("                    Nishant");
+    return 0;
+}
+</pre>
+<a href="#">Back to Top</a>
+
+<hr>
+
+<h2 id="p9">Program 09 - Display Password as Stars</h2>
+<p>Write a C program to read a password and display stars instead of the characters.</p>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    char password[20];
+    int i = 0;
+
+    printf("Enter password: ");
+    scanf("%19s", password);
+
+    printf("Password: ");
+
+    while (password[i] != '\0')
+    {
+        printf("*");
+        i++;
+    }
+
+    return 0;
+}
+</pre>
+<p>Note: This prints stars after the password is entered; it does not hide characters while typing.</p>
+<a href="#">Back to Top</a>
+
+<hr>
+
+<h2 id="p10">Program 10 - Print ASCII Values of Two Characters</h2>
+<p>Write a C program to display the ASCII values of two characters.</p>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    char a, b;
+
+    printf("Enter two characters: ");
+    scanf(" %c %c", &amp;a, &amp;b);
+
+    printf("ASCII value of %c = %d\n", a, a);
+    printf("ASCII value of %c = %d\n", b, b);
+
+    return 0;
+}
+</pre>
+<a href="#">Back to Top</a>
+
+<hr>
+
+<h2 id="p11">Program 11 - Print ASCII Characters from 0 to 127</h2>
+<p>Write a C program to print character codes from 0 to 127.</p>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int i;
+
+    for (i = 0; i &lt;= 127; i++)
+    {
+        printf("%d = %c\n", i, i);
+    }
+
+    return 0;
+}
+</pre>
+<a href="#">Back to Top</a>
+
+<hr>
+
+<a href="website.html">Back to Home</a>
+
+</body>
+</html>
